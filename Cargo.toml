@@ -1,0 +1,17 @@
+[workspace]
+members = [
+  "associated-token-account/program",
+  "libraries/math",
+  "token/cli",
+  "token/program",
+  "utils/cgen",
+  "utils/test-client",
+]
+exclude = [
+  "themis/client_ristretto",
+  "themis/program_ristretto",
+  "token/perf-monitor", # TODO: Rework perf-monitor to use solana-program-test, avoiding the need to link directly with the BPF VM
+]
+
+[profile.dev]
+split-debuginfo = "unpacked"
